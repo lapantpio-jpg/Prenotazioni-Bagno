@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bagno Morbido - Prenotazione</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="hero">
+        <h1>Prenotazione Bagno Morbido</h1>
+        <p>Prenota in pochi secondi i tui 5 minuti di bagno</p>
+      </section>
+
+      <section class="content-grid">
+        <article class="card">
+          <h2>Dati prenotazione</h2>
+          <form id="bookingForm" novalidate>
+            <div class="form-row">
+              <label for="fullName">Nome e cognome</label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                placeholder="Es. Mario Rossi"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="time">Orario</label>
+              <input
+                id="time"
+                name="time"
+                type="time"
+                min="08:00"
+                max="22:00"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <label for="notes">Note (opzionale)</label>
+              <textarea
+                id="notes"
+                name="notes"
+                rows="3"
+                placeholder="Richieste particolari..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Conferma prenotazione
+            </button>
+            <p
+              id="formMessage"
+              class="message"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+        </article>
+
+        <aside class="card summary">
+          <h2>Ultima prenotazione</h2>
+          <ul id="summaryList">
+            <li>Nessuna prenotazione ancora registrata.</li>
+          </ul>
+          <button id="viewBookings" type="button" class="btn-secondary">
+            Vedi prenotazioni
+          </button>
+          <ul id="bookingsHistory" class="history-list hidden"></ul>
+          <button id="clearBooking" type="button" class="btn-secondary">
+            Cancella prenotazione
+          </button>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
